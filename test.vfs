@@ -1,0 +1,4 @@
+# Тестовый скрипт
+ls -la
+cd /home/user
+ls
