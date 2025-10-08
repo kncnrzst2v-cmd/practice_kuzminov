@@ -37,7 +37,7 @@ class VFS:
             with open(script_path, 'r') as file:
                 for line in file:
                     line = line.strip()
-                    if not line or line.startswith('#'):
+                    if not line:
                         continue
                     
                     self.print_text(f"{line}\n")
@@ -52,6 +52,9 @@ class VFS:
             return
         
         command = parts[0]
+        if command.startswith('#'):
+            return
+        
         args = parts[1:]
         
         if command == "exit":
